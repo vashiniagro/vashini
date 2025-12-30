@@ -1,0 +1,340 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "Pk-.####",
+ "creation": "2025-05-02 18:37:03.785310",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ami1",
+  "amended_from",
+  "sales_invoice",
+  "company",
+  "customer",
+  "customer_name",
+  "container_size",
+  "marks_and_container",
+  "column_break_cksj",
+  "invoice_date",
+  "buyer_reference_number",
+  "buyer_reference_date",
+  "incoterms",
+  "lot_number",
+  "harvest_date",
+  "lot_date",
+  "section_break_aogs",
+  "packing",
+  "packing_items",
+  "floor",
+  "floor_items",
+  "carriage_details_section",
+  "carried_by",
+  "vesselvoyage_no_if_by_sea",
+  "career_number_if_by_air",
+  "port_of_discharge",
+  "column_break_eaoc",
+  "pre_carriage_by",
+  "place_of_receipt_by_pre_carrier",
+  "port_of_loading",
+  "final_destination",
+  "section_break_dyvs",
+  "net_weight",
+  "gross_weight",
+  "total_bags",
+  "column_break_dpnk",
+  "goods_description",
+  "address_and_contacts_tab",
+  "section_break_idqo",
+  "customer_address",
+  "shipping_address_name",
+  "company_address_name",
+  "column_break_mtra"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ami1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Packing List",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "depends_on": "eval: doc.packing == 1;",
+   "fieldname": "packing_items",
+   "fieldtype": "Table",
+   "label": "Packing Items",
+   "options": "Packing Items"
+  },
+  {
+   "fieldname": "section_break_dyvs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "sales_invoice.custom_net_weight",
+   "fieldname": "net_weight",
+   "fieldtype": "Float",
+   "label": "Net Weight"
+  },
+  {
+   "fetch_from": "sales_invoice.custom_gross_weight",
+   "fieldname": "gross_weight",
+   "fieldtype": "Float",
+   "label": "Gross Weight"
+  },
+  {
+   "fieldname": "total_bags",
+   "fieldtype": "Float",
+   "label": "Total Bags"
+  },
+  {
+   "fieldname": "column_break_dpnk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "goods_description",
+   "fieldtype": "Small Text",
+   "label": "Goods Description"
+  },
+  {
+   "fieldname": "carriage_details_section",
+   "fieldtype": "Section Break",
+   "label": "Carriage Details"
+  },
+  {
+   "fetch_from": "sales_invoice.custom_carried_by",
+   "fieldname": "carried_by",
+   "fieldtype": "Select",
+   "label": "Carried By",
+   "options": "\nSea\nAir"
+  },
+  {
+   "depends_on": "eval: doc.carried_by == 'Sea'",
+   "fetch_from": "sales_invoice.custom_vesselvoyage_no_if_by_sea",
+   "fieldname": "vesselvoyage_no_if_by_sea",
+   "fieldtype": "Data",
+   "label": "Vessel/Voyage No if By Sea"
+  },
+  {
+   "depends_on": "eval: doc.carried_by == 'Air'",
+   "fetch_from": "sales_invoice.custom_career_number_if_by_air",
+   "fieldname": "career_number_if_by_air",
+   "fieldtype": "Data",
+   "label": "Career Number if By Air"
+  },
+  {
+   "fieldname": "column_break_eaoc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "sales_invoice.custom_pre_carriage_by",
+   "fieldname": "pre_carriage_by",
+   "fieldtype": "Select",
+   "label": "Pre Carriage by",
+   "options": "By Road"
+  },
+  {
+   "fetch_from": "sales_invoice.custom_place_of_receipt_by_pre_carrier",
+   "fieldname": "place_of_receipt_by_pre_carrier",
+   "fieldtype": "Select",
+   "label": "Place of receipt by pre carrier",
+   "options": "Tuticorin (India)\nChennai (India)"
+  },
+  {
+   "fetch_from": "sales_invoice.custom_port_of_loading",
+   "fieldname": "port_of_loading",
+   "fieldtype": "Select",
+   "label": "Port of Loading",
+   "options": "Tuticorin (India)\nChennai (India)"
+  },
+  {
+   "fieldname": "marks_and_container",
+   "fieldtype": "Data",
+   "label": "Marks and Container"
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "options": "Sales Invoice"
+  },
+  {
+   "fieldname": "column_break_cksj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_aogs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "sales_invoice.custom_buyer_reference_number",
+   "fieldname": "buyer_reference_number",
+   "fieldtype": "Data",
+   "label": "Buyer Reference Number"
+  },
+  {
+   "fetch_from": "sales_invoice.custom_buyer_reference_date",
+   "fieldname": "buyer_reference_date",
+   "fieldtype": "Date",
+   "label": "Buyer Reference Date"
+  },
+  {
+   "fieldname": "incoterms",
+   "fieldtype": "Select",
+   "label": "Incoterms",
+   "options": "\nCIF\nFOB\nCFR\nC&F"
+  },
+  {
+   "fetch_from": "sales_invoice.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fetch_from": "sales_invoice.customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "sales_invoice.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "section_break_idqo",
+   "fieldtype": "Section Break",
+   "label": "Billing Address"
+  },
+  {
+   "fetch_from": "sales_invoice.customer_address",
+   "fieldname": "customer_address",
+   "fieldtype": "Link",
+   "label": "Customer Address Name",
+   "options": "Address"
+  },
+  {
+   "fieldname": "address_and_contacts_tab",
+   "fieldtype": "Tab Break",
+   "label": "Address and Contacts"
+  },
+  {
+   "fieldname": "column_break_mtra",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "sales_invoice.custom_notifying_party",
+   "fieldname": "shipping_address_name",
+   "fieldtype": "Link",
+   "label": "Shipping Address Name",
+   "options": "Address"
+  },
+  {
+   "fetch_from": "sales_invoice.company_address",
+   "fieldname": "company_address_name",
+   "fieldtype": "Link",
+   "label": "Company Address Name",
+   "options": "Address"
+  },
+  {
+   "fetch_from": "sales_invoice.posting_date",
+   "fieldname": "invoice_date",
+   "fieldtype": "Date",
+   "label": "Invoice Date"
+  },
+  {
+   "depends_on": "eval:doc.floor == 1;",
+   "fieldname": "floor_items",
+   "fieldtype": "Table",
+   "label": "Floor Items",
+   "options": "Packing Floor Items"
+  },
+  {
+   "default": "0",
+   "fieldname": "floor",
+   "fieldtype": "Check",
+   "label": "Floor"
+  },
+  {
+   "default": "0",
+   "fieldname": "packing",
+   "fieldtype": "Check",
+   "label": "Packing"
+  },
+  {
+   "fetch_from": "sales_invoice.custom_container_type",
+   "fieldname": "container_size",
+   "fieldtype": "Select",
+   "label": "Container Size",
+   "options": "40 Feet\n20 Feet"
+  },
+  {
+   "fieldname": "lot_number",
+   "fieldtype": "Data",
+   "label": "Lot number"
+  },
+  {
+   "fieldname": "harvest_date",
+   "fieldtype": "Date",
+   "label": "Harvest Date"
+  },
+  {
+   "fieldname": "lot_date",
+   "fieldtype": "Date",
+   "label": "Lot Date"
+  },
+  {
+   "fetch_from": "sales_invoice.custom_port_of_discharge",
+   "fieldname": "port_of_discharge",
+   "fieldtype": "Link",
+   "label": "Port of Discharge",
+   "options": "Port"
+  },
+  {
+   "fetch_from": "sales_invoice.custom_destination",
+   "fieldname": "final_destination",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Final Destination",
+   "options": "Port"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-10-24 10:39:48.217090",
+ "modified_by": "Administrator",
+ "module": "Vashini",
+ "name": "Packing List",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

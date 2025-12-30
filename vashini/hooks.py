@@ -137,13 +137,14 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
+doc_events = {
+	"Sales Order": {
+		"before_insert": "vashini.vashini.server_script.sales_order.set_proforma_invoice_no"
+	}
+# 	"Sales Invoice":{
+# 		"on_submit": "vashini.vashini.server_script.sales_invoice.make_inter_company_pi"
 # 	}
-# }
+}
 
 # Scheduled Tasks
 # ---------------
@@ -177,6 +178,10 @@ app_license = "mit"
 # override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "vashini.event.get_events"
 # }
+# override_whitelisted_methods = {
+#     "erpnext.accounts.doctype.sales_invoice.sales_invoice.make_inter_company_purchase_invoice": "vashini.vashini.server_script.purchase_invoice.make_inter_company_purchase_invoice"
+# }
+
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
