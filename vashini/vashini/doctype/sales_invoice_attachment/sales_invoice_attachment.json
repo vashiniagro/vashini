@@ -1,0 +1,241 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "SIA-.####",
+ "creation": "2026-01-02 16:20:31.960714",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "sales_invoice",
+  "posting_date",
+  "company",
+  "certificates_attachment_section",
+  "packing_list_print",
+  "bl_copy",
+  "certification_of_origin",
+  "fumigation_certificate",
+  "shipping_bill",
+  "column_break_vvvd",
+  "stuffing_report",
+  "stuffing_images",
+  "coi",
+  "test_report",
+  "ebrc",
+  "column_break_ldfh",
+  "lr_copy",
+  "organic_certificate",
+  "eu_coi",
+  "npop_tc",
+  "nop_tc",
+  "column_break_tgbo",
+  "container_booking_copy",
+  "pq_certificate",
+  "sales_invoice___bl",
+  "sales_invoice___sb"
+ ],
+ "fields": [
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "options": "Sales Invoice",
+   "unique": 1
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "certificates_attachment_section",
+   "fieldtype": "Section Break",
+   "label": "Certificates Attachment"
+  },
+  {
+   "fieldname": "packing_list_print",
+   "fieldtype": "Attach",
+   "label": "Packing List Print",
+   "length": 1,
+   "permlevel": 2
+  },
+  {
+   "fieldname": "bl_copy",
+   "fieldtype": "Attach",
+   "label": "BL Copy",
+   "permlevel": 3
+  },
+  {
+   "fieldname": "certification_of_origin",
+   "fieldtype": "Attach",
+   "label": "Certification of Origin",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "fumigation_certificate",
+   "fieldtype": "Attach",
+   "label": "Fumigation certificate",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "shipping_bill",
+   "fieldtype": "Attach",
+   "label": "Shipping Bill",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_vvvd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "stuffing_report",
+   "fieldtype": "Attach",
+   "label": "Stuffing Report",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "stuffing_images",
+   "fieldtype": "Attach",
+   "label": "Stuffing Images",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "coi",
+   "fieldtype": "Attach",
+   "label": "COI",
+   "permlevel": 2
+  },
+  {
+   "fieldname": "test_report",
+   "fieldtype": "Attach",
+   "label": "Test Report",
+   "permlevel": 2
+  },
+  {
+   "fieldname": "ebrc",
+   "fieldtype": "Attach",
+   "label": "EBRC",
+   "permlevel": 2
+  },
+  {
+   "fieldname": "column_break_ldfh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "lr_copy",
+   "fieldtype": "Attach",
+   "label": "LR Copy",
+   "permlevel": 2
+  },
+  {
+   "fieldname": "organic_certificate",
+   "fieldtype": "Attach",
+   "label": "Organic certificate",
+   "permlevel": 2
+  },
+  {
+   "fieldname": "eu_coi",
+   "fieldtype": "Attach",
+   "label": "EU COI",
+   "permlevel": 2
+  },
+  {
+   "fieldname": "npop_tc",
+   "fieldtype": "Attach",
+   "label": "NPOP TC",
+   "permlevel": 2
+  },
+  {
+   "fieldname": "nop_tc",
+   "fieldtype": "Attach",
+   "label": "NOP TC",
+   "permlevel": 2
+  },
+  {
+   "fieldname": "column_break_tgbo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "container_booking_copy",
+   "fieldtype": "Attach",
+   "label": "Container Booking Copy",
+   "permlevel": 3
+  },
+  {
+   "fieldname": "pq_certificate",
+   "fieldtype": "Attach",
+   "label": "PQ Certificate",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "sales_invoice___bl",
+   "fieldtype": "Attach",
+   "label": "Sales invoice _ BL",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "sales_invoice___sb",
+   "fieldtype": "Attach",
+   "label": "Sales invoice _ SB",
+   "permlevel": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-22 14:59:28.752554",
+ "modified_by": "Administrator",
+ "module": "Vashini",
+ "name": "Sales Invoice Attachment",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CHA",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Freight forwarder",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

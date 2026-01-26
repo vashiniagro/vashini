@@ -54,6 +54,27 @@ def execute(filters=None):
 
         # Add Sales Invoice comparison row
         if custom_ref != "No Reference":
+            stock =frappe.db.get_value("Stock Entry",{"custom_sales_invoice": custom_ref,"stock_entry_type": "Repack"}, "name")
+            val = frappe.db.get_value(
+                "Stock Entry",
+                {
+                    "custom_sales_invoice": custom_ref,
+                    "stock_entry_type": "Repack"
+                },
+                "total_outgoing_value"
+            ) or 0
+
+            dataa.append({
+                "name": stock,
+                "supplier": "",
+                "posting_date": "",
+                "customer": customer,
+                "custom_sales_invoice_reference": "Total Coconut Value",
+                "bill_no": "",
+                "bill_date": "",
+                "expense_account": "",
+                "amount": val
+            })
             sales_total = frappe.db.get_value("Sales Invoice", custom_ref, "base_total") or 0
             customer = frappe.db.get_value("Sales Invoice", custom_ref, "customer_name") or 0
             dataa.append({
@@ -76,7 +97,7 @@ def execute(filters=None):
                 "bill_no": "",
                 "bill_date": "",
                 "expense_account": "",
-                "amount": sales_total - tot_amount
+                "amount": sales_total - tot_amount - val
             })
 
     return columns, dataa
