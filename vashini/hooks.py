@@ -139,7 +139,8 @@ app_license = "mit"
 
 doc_events = {
 	"Sales Order": {
-		"before_insert": "vashini.vashini.server_script.sales_order.set_proforma_invoice_no"
+		"before_cancel":"vashini.vashini.server_script.sales_order.proforma_no_cancel",
+		"before_submit":"vashini.vashini.server_script.sales_order.auto_create_po"
 	}
 # 	"Sales Invoice":{
 # 		"on_submit": "vashini.vashini.server_script.sales_invoice.make_inter_company_pi"

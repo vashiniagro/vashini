@@ -9,6 +9,22 @@
   "sales_invoice",
   "posting_date",
   "company",
+  "customer_code",
+  "abbr",
+  "marks_and_container_nos",
+  "lut_fy_number",
+  "buyer_reference_date",
+  "column_break_scme",
+  "reference_number",
+  "performa_invoice_no",
+  "dispatch_doc_number",
+  "dispatch_through",
+  "bl_number",
+  "lot_date",
+  "lot_number",
+  "column_break_sqia",
+  "custom_remarks",
+  "is_domestic_invoice",
   "certificates_attachment_section",
   "packing_list_print",
   "bl_copy",
@@ -31,17 +47,38 @@
   "container_booking_copy",
   "pq_certificate",
   "sales_invoice___bl",
-  "sales_invoice___sb"
+  "sales_invoice___sb",
+  "section_break_fgjm",
+  "port_of_discharge",
+  "port_discharge",
+  "career_number_if_by_air",
+  "vesselvoyage_no_if_by_sea",
+  "column_break_bhrp",
+  "destination",
+  "delivery_description",
+  "address_contact_tab",
+  "notifying_address_2",
+  "notifying_party_2",
+  "notify_address",
+  "notify_address_name",
+  "more_info_tab",
+  "bank_account",
+  "account_number",
+  "packing"
  ],
  "fields": [
   {
    "fieldname": "sales_invoice",
    "fieldtype": "Link",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_standard_filter": 1,
    "label": "Sales Invoice",
    "options": "Sales Invoice",
    "unique": 1
   },
   {
+   "fetch_from": "sales_invoice.posting_date",
    "fieldname": "posting_date",
    "fieldtype": "Date",
    "label": "Posting Date"
@@ -167,6 +204,7 @@
    "permlevel": 1
   },
   {
+   "fetch_from": "sales_invoice.company",
    "fieldname": "company",
    "fieldtype": "Link",
    "label": "Company",
@@ -183,12 +221,180 @@
    "fieldtype": "Attach",
    "label": "Sales invoice _ SB",
    "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_scme",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "performa_invoice_no",
+   "fieldtype": "Data",
+   "label": "Performa Invoice No"
+  },
+  {
+   "fieldname": "reference_number",
+   "fieldtype": "Data",
+   "label": "Reference Number"
+  },
+  {
+   "fieldname": "column_break_sqia",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "custom_remarks",
+   "fieldtype": "Small Text",
+   "label": "Custom Remarks"
+  },
+  {
+   "fieldname": "section_break_fgjm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "port_of_discharge",
+   "fieldtype": "Select",
+   "label": "Port of Discharge",
+   "options": "\nMiami, USA\nEverglades, USA\nFelixstowe, UK\nRotterdam, Netherlands\nToronto, Canada\nLondon Gateway Port,UK\nHalifax, Canada\nNewark, USA\nNew York, USA\nLos Angeles, USA\nBarcelona, Spain\nCaucedo, Dominican Republic\nValencia, Spain\nIstanbul port, Turkey\nAlgeciras- Spain"
+  },
+  {
+   "fieldname": "address_contact_tab",
+   "fieldtype": "Tab Break",
+   "label": "Address & Contact"
+  },
+  {
+   "fieldname": "notifying_address_2",
+   "fieldtype": "Small Text",
+   "label": "Notifying Address 2"
+  },
+  {
+   "fieldname": "notifying_party_2",
+   "fieldtype": "Link",
+   "label": "Notifying Party 2",
+   "options": "Address"
+  },
+  {
+   "fieldname": "column_break_bhrp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "destination",
+   "fieldtype": "Link",
+   "label": "Destination",
+   "options": "Port"
+  },
+  {
+   "fieldname": "port_discharge",
+   "fieldtype": "Link",
+   "label": "Port Discharge",
+   "options": "Port"
+  },
+  {
+   "fieldname": "more_info_tab",
+   "fieldtype": "Tab Break",
+   "label": "More Info"
+  },
+  {
+   "fieldname": "account_number",
+   "fieldtype": "Data",
+   "label": "Account Number"
+  },
+  {
+   "fieldname": "bank_account",
+   "fieldtype": "Link",
+   "label": "Bank Account",
+   "options": "Bank Account"
+  },
+  {
+   "fieldname": "dispatch_through",
+   "fieldtype": "Data",
+   "label": "Dispatch Through"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_domestic_invoice",
+   "fieldtype": "Check",
+   "label": "Is Domestic Invoice"
+  },
+  {
+   "fieldname": "bl_number",
+   "fieldtype": "Data",
+   "label": "BL Number"
+  },
+  {
+   "fieldname": "dispatch_doc_number",
+   "fieldtype": "Data",
+   "label": "Dispatch Doc Number"
+  },
+  {
+   "fieldname": "lot_date",
+   "fieldtype": "Date",
+   "label": "LOT Date"
+  },
+  {
+   "fieldname": "lot_number",
+   "fieldtype": "Data",
+   "label": "LOT Number"
+  },
+  {
+   "fieldname": "notify_address",
+   "fieldtype": "Small Text",
+   "label": "Notify Address"
+  },
+  {
+   "fieldname": "notify_address_name",
+   "fieldtype": "Link",
+   "label": "Notify Address Name",
+   "options": "Address"
+  },
+  {
+   "fieldname": "delivery_description",
+   "fieldtype": "Small Text",
+   "label": "Delivery Description"
+  },
+  {
+   "fieldname": "customer_code",
+   "fieldtype": "Data",
+   "label": "Customer Code"
+  },
+  {
+   "fieldname": "marks_and_container_nos",
+   "fieldtype": "Data",
+   "label": "Marks and Container Nos"
+  },
+  {
+   "fieldname": "abbr",
+   "fieldtype": "Data",
+   "label": "Abbr"
+  },
+  {
+   "fieldname": "career_number_if_by_air",
+   "fieldtype": "Data",
+   "label": "Career Number if By Air"
+  },
+  {
+   "fieldname": "vesselvoyage_no_if_by_sea",
+   "fieldtype": "Data",
+   "label": "Vessel/Voyage No if By Sea"
+  },
+  {
+   "fieldname": "lut_fy_number",
+   "fieldtype": "Data",
+   "label": "LUT FY Number"
+  },
+  {
+   "fieldname": "packing",
+   "fieldtype": "Data",
+   "label": "packing"
+  },
+  {
+   "fieldname": "buyer_reference_date",
+   "fieldtype": "Date",
+   "label": "Buyer Reference Date"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-22 14:59:28.752554",
+ "modified": "2026-02-14 11:18:16.259677",
  "modified_by": "Administrator",
  "module": "Vashini",
  "name": "Sales Invoice Attachment",
